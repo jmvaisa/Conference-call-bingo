@@ -1,11 +1,37 @@
 .grid-container{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    width: 1000px;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-rows: 80px 120px 120px 120px 120px 120px;
     background-color: green;
     padding: 10px;
-    margin: 10%;
+    margin: auto;
 }
 
 .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
     text-align: center;
+}
+
+.header{
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.selected{
+    background-color: rgb(78, 125, 255);
+}
+
+.free{
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgb(78, 125, 255);
 }
