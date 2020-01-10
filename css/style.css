@@ -1,0 +1,10 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    background-color: green;
+    padding: 10px;
+}
+
+.grid-item {
+    text-align: center;
+}
