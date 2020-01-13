@@ -140,6 +140,7 @@ function resetCard() {
       if (z != 12) {
         var currSquare = "square" + i + j;
         document.getElementById(currSquare).innerHTML = "";
+        document.getElementById(currSquare).classList.remove("selected");
       }
       z++;
     }
@@ -148,16 +149,17 @@ function resetCard() {
 }
 
 var gridItem = document.getElementsByClassName("grid-item");
-console.log("classname list:");
-console.log(gridItem);
-console.log("Class Length:" + gridItem.length);
 var myFunction = function () {
-  console.log("inside class")
+  if(!this.classList.contains("selected")){
+    this.classList.add("selected");
+  }else{
+    this.classList.remove("selected");
+  }
+  
 };
 
 
 for (var i = 0; i < gridItem.length; i++) {
-  console.log("Inside Loop:" + i);
   gridItem[i].addEventListener('click', myFunction);
 }
 
