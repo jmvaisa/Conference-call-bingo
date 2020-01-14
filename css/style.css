@@ -1,6 +1,9 @@
 header h1{
     margin:auto;
     text-align: center;
+    background-color: green;
+    width: 1020px;
+    color: white;
 }
 
 .grid-container{

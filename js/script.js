@@ -171,8 +171,39 @@ function checkWin(){
   
   var diagupCheck = 0;
   var diagdwnCheck = 0
-  // check rows for win
+  // check rows and columns for win
+  // check diag down and up for win
   for (var i = 0; i < 5; i++){
+    rowCheck = 0;
+    columnCheck = 0;
+    var currSquareDiagDwn = "square" + i + i;
+    var x = 4 - i;
+    var currSquareDiagUp = "square" + x + i;
+    for (var j = 0; j < 5; j++){
+      var currSquareRow = "square" + i + j;
+      var currSquareColumn = "square" + j + i;
+      if (document.getElementById(currSquareRow).classList.contains("selected")){
+        rowCheck++;
+      }
+      if (document.getElementById(currSquareColumn).classList.contains("selected")){
+        columnCheck++;
+      }
+      if (columnCheck == 5 || rowCheck == 5){
+        alertWinner();
+      }
+    }
+    if (document.getElementById(currSquareDiagDwn).classList.contains("selected")){
+      diagupCheck++;
+    }
+    if (document.getElementById(currSquareDiagUp).classList.contains("selected")){
+      diagdwnCheck++;
+    }
+    if (diagupCheck == 5 || diagdwnCheck == 5){
+      alertWinner();
+    }
+  }
+  
+  /*for (var i = 0; i < 5; i++){
     rowCheck = 0;
     for (var j = 0; j < 5; j++){
       var currSquare = "square" + i + j;
@@ -196,9 +227,9 @@ function checkWin(){
         alertWinner();
       }
     }
-  }
+  }*/
   // check diag down for win
-  for (var i = 0; i < 5; i++){
+  /*for (var i = 0; i < 5; i++){
     var currSquare = "square" + i + i;
       if (document.getElementById(currSquare).classList.contains("selected")){
         diagupCheck++;
@@ -218,7 +249,7 @@ function checkWin(){
       if (diagdwnCheck == 5){
         alertWinner();
       }
-  }
+  }*/
 }
 
 function alertWinner(){
