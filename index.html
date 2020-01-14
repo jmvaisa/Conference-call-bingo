@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Conference Call BINGO</title>
     <link rel="stylesheet" href="css/style.css">
     
 </head>
 
 <body>
-    <h1>Forest Service Conference Call Bingo</h1>
+    <header><h1>Conference Call Bingo</h1></header>
     <div id="bingo-header" class="grid-container">
         <div class="header">B</div>
         <div class="header">I</div>
@@ -33,7 +33,7 @@
     
         <div id="square20" class="grid-item"></div>
         <div id="square21" class="grid-item"></div>
-        <div id="square22" class="grid-item free">Free</div>
+        <div id="square22" class="grid-item selected free">Free</div>
         <div id="square23" class="grid-item"></div>
         <div id="square24" class="grid-item"></div>
     
@@ -49,8 +49,8 @@
         <div id="square43" class="grid-item"></div>
         <div id="square44" class="grid-item"></div>
     </div>
-    <div>
-        <button type="button" onclick="resetCard()">New Card</button>
+    <div align="center" style="margin-top: 1em;">
+        <button class="btn" type="button" onclick="resetCard()">New Card</button>
     </div>
     <script src="js/script.js"></script>
 </body>

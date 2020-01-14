@@ -16,7 +16,7 @@ sqObj = {
       "saying": "Sorry, I didn't catch that, can you repeat it again?"
     },
     {
-      "saying": "So(fae out) I can (unintelligible) by (fade out), is that ok?"
+      "saying": "So(fade out) I can (unintelligible) by (fade out), is that ok?"
     },
     {
       "saying": "Hey, it's me, sorry I am late I (insert lame excuse)"
@@ -152,6 +152,7 @@ var gridItem = document.getElementsByClassName("grid-item");
 var myFunction = function () {
   if(!this.classList.contains("selected")){
     this.classList.add("selected");
+    checkWin();
   }else{
     this.classList.remove("selected");
   }
@@ -160,6 +161,66 @@ var myFunction = function () {
 
 
 for (var i = 0; i < gridItem.length; i++) {
-  gridItem[i].addEventListener('click', myFunction);
+  if(i != freeSq){
+    gridItem[i].addEventListener('click', myFunction);
+  }
 }
 
+function checkWin(){
+  var rowCheck, columnCheck;
+  
+  var diagupCheck = 0;
+  var diagdwnCheck = 0
+  // check rows for win
+  for (var i = 0; i < 5; i++){
+    rowCheck = 0;
+    for (var j = 0; j < 5; j++){
+      var currSquare = "square" + i + j;
+      if (document.getElementById(currSquare).classList.contains("selected")){
+        rowCheck++;
+      }
+      if (rowCheck == 5){
+        alertWinner();
+      }
+    }
+  }
+  // check columns for win
+  for (var i = 0; i < 5; i++){
+    columnCheck = 0;
+    for (var j = 0; j < 5; j++){
+      var currSquare = "square" + j + i;
+      if (document.getElementById(currSquare).classList.contains("selected")){
+        columnCheck++;
+      }
+      if (columnCheck == 5){
+        alertWinner();
+      }
+    }
+  }
+  // check diag down for win
+  for (var i = 0; i < 5; i++){
+    var currSquare = "square" + i + i;
+      if (document.getElementById(currSquare).classList.contains("selected")){
+        diagupCheck++;
+      }
+      if (diagupCheck == 5){
+        alertWinner();
+      }
+  }
+
+  // check diag up for win
+  for (var i = 0; i < 5; i++){
+    var x = 4 - i;
+    var currSquare = "square" + x + i;
+      if (document.getElementById(currSquare).classList.contains("selected")){
+        diagdwnCheck++;
+      }
+      if (diagdwnCheck == 5){
+        alertWinner();
+      }
+  }
+}
+
+function alertWinner(){
+  alert("Now take your phone off mute and yell, BINGO!")
+}
