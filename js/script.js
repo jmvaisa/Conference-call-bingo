@@ -86,6 +86,9 @@ sqObj = {
     },
     {
       "saying": "Let's review the last meeting"
+    },
+    {
+      "saying": "I can't get Skype/Adobe Connect/WebEx to work"
     }
   ]
 };
